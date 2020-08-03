@@ -18,6 +18,7 @@ describe 'School' do
     end
 
     it 'is able to add multiple students to a class (grade)' do
+      
       @school.add_student("Jeff Baird", 10)
       @school.add_student("Blake Johnson", 10)
 
