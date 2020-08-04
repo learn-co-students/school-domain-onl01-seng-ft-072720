@@ -1,27 +1,41 @@
 # code here!
+require "pry"
 class School
-  ROSTER = {}
+
   def initialize(school_name)
     @school_name = school_name
+    @roster = {}
   end
   
-  def roster
-    ROSTER
+  def roster 
+    @roster 
   end
   
   def add_student(name, grade)
     @student_name = name
     @student_grade = grade 
-  if ROSTER[grade] == nil 
-    ROSTER[grade] = []
-    ROSTER[grade] << name 
+  if @roster[grade] == nil 
+    @roster[grade] = []
+    @roster[grade] << name 
   else
-    ROSTER[grade] << name 
+    @roster[grade] << name 
     
     end
   end 
   
   def grade(grade)
-    return ROSTER[grade]
+    return @roster[grade]
+  end
+
+  def sort
+    sorted = {}
+     sorted = @roster.each do |grade, students_array|
+         students_array.sort!
+      
+      
+    end 
+    
+    return sorted
+
   end
 end
